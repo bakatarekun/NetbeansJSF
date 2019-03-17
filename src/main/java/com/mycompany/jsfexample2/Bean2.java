@@ -43,6 +43,7 @@ public class Bean2 implements Serializable {
    public void changeBoolean(){
        this.isShow= true;
        this.msg = "it worked!";
+       System.out.println("changeBoolean Called...");
    
    }
    public void handleKeyEvent() {
@@ -51,12 +52,12 @@ public class Bean2 implements Serializable {
        
         
         msg = msg.toUpperCase();
-        try{
-            Thread.sleep(3000);
-        } catch(InterruptedException ex){
-            
-        }
-        FacesMessage message = new FacesMessage("entry saved");
-        FacesContext.getCurrentInstance().addMessage(null, message);
+//        try{
+//            Thread.sleep(3000);
+//        } catch(InterruptedException ex){
+//            
+//        }
+//        FacesMessage message = new FacesMessage("entry saved");
+//        FacesContext.getCurrentInstance().addMessage(null, message);
     }
 }
