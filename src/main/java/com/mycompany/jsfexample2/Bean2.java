@@ -6,10 +6,13 @@
 package com.mycompany.jsfexample2;
 
 import java.io.Serializable;
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import org.primefaces.model.menu.DefaultMenuModel;
+import org.primefaces.model.menu.MenuModel;
 
 /**
  *
@@ -20,10 +23,21 @@ import javax.faces.context.FacesContext;
 public class Bean2 implements Serializable {
    boolean isShow;
    String msg ="default message";
-
+   private MenuModel topMenuModel;
    public Bean2(){
        
    }
+   
+   @PostConstruct
+   public void init(){
+       buildTopMenu();
+   }
+   
+    private void buildTopMenu(){
+        topMenuModel = new DefaultMenuModel();
+        
+
+    }
     public boolean isIsShow() {
         return isShow;
     }
